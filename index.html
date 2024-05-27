@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="./style.css">
+      <title>Wheather App</title>
+</head>
+
+<body>
+      <div class="container">
+            <div class="input">
+                  <form id="form">
+                        <label for="city">Enter your city:</label>
+                        <div class="one">
+                              <input id="city" type="text" maxlength="15" minlength="4" required
+                                    placeholder="eg: Karachi">
+                              <i class='bx bx-search-alt-2'></i>
+                        </div>
+                  </form>
+
+
+            </div>
+
+            <div class="wheather-div">
+                  <div class="message"></div>
+                  <div class="cityName"></div>
+                  <div class="temp">
+                        <p id="temp"></p><span id="celcius"></span>
+                  </div>
+                  <img src="" class="wheatherIcon" width="200px"></img>
+                  <div class="dayType"></div>
+                  <div class="more">
+                        <div class="wind">
+                              <span id="windIcon"><i class='bx bx-wind'></i></span>
+                              <div class="value2">
+                                    <p id="wind"></p>
+                                    <span id="meter"></span>
+                              </div>
+                        </div>
+                        <div class="humidity">
+                              <span id="humidityIcon"><i class='bx bxs-droplet'></i></span>
+                              <div class="value1">
+                                    <p id="humidity"></p>
+                                    <span id="percent"></span>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="./app.js"></script>
+</body>
+
+</html>
