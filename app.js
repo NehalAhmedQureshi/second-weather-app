@@ -13,24 +13,42 @@ let percent = document.querySelector('#percent')
 // let humid = document.querySelector('#humidity')
 let meter = document.querySelector('#meter')
 let none = document.querySelector('.wheather-div')
+let humidityIcon = document.querySelector('#humidityIcon')
+let windIcon = document.querySelector('#windIcon')
 
 
+// hide wheather div
 none.style.display = 'none'
+
+// write a set time function which run after two second
+// setTimeout(() => {
+//     swal("Good job!", "You clicked the button!", "error");
+// },2000)
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
     try {
 
-      // empty all input for getting wheather
-      cityName.innerHTML = ''
+        // empty all input for getting wheather
+        cityName.innerHTML = ''
+        temp.innerHTML = ''
+        //   cityName.innerHTML = ''
+        humidity.innerHTML = ''
+        //   wind.innerHTML = ''
+        wind.innerHTML = ''
+        dayType.innerHTML = ''
+        Celcius.innerHTML = ''
+        percent.innerHTML = ''
+        meter.innerHTML = ''
+        wheatherIcon.src = ''
 
-      // show wheather div
-      none.style.display = 'flex'
+        // show wheather div
+        none.style.display = 'flex'
 
 
-      // show loading and get input value 
+        // show loading and get input value 
         loading.innerHTML = 'loading...';
-        
+
 
         // fetch api and convert in json
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${APIkey}`);
@@ -62,9 +80,16 @@ form.addEventListener('submit', async (event) => {
 
         //  ℃
 
-        
+
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
-        loading.innerHTML = 'Error loading data';
+
+        // hide wheather div
+        none.style.display = 'none'
+
+        swal("Error!", "Enter valid city name!", "error");
+        humidityIcon.style.display = 'none'
+        windIcon.style.display = 'none'
+
     }
 });
